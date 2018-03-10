@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title> Friend Finder  </title>
+
+    <!-- Include meta viewport tag to give browser instructions on how to control page dimensions/scaling -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest Bootstrap compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Customized stylesheet -->
+
+
+    <!-- Google fonts -->
+
+    <link href="https://fonts.googleapis.com/css?family=Anton|Bungee|Fjalla+One|Orbitron|Ravi+Prakash|Russo+One" rel="stylesheet">
+
+    <!-- Font Awesome link which enable fonts and icons.  -->
+
+    <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
+
+</head>
+
+
+
+<body>
+
+<!-- MODAL THAT DISPLAYS THE MATCH -->
+
+<div class="modal fade" id="personModal" tabindex="-1" role="dialog">
+
+  <div class="modal-dialog" role="document">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+        <h3 class="modal-title text-center"><i class="fa fa-thumbs-o-up"></i> Your Friend Awaits <i class="fa fa-thumbs-o-up"></i> </h3>
+
+      </div>
+
+      <div class="modal-body">
+
+        <h4 class="text-center">Hi I am: </h4>
+
+        <h3 class="text-center" id="matchName"></h3>
+
+
+
+        <div id="insertPhoto">
+
+        <!-- INSERT THE PHOTO HERE -->
+
+        
+
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+        <button type="button" class="btn btn-purple">Enjoy</button>
+
+      </div>
+
+    </div><!-- /.modal-content -->
+
+  </div><!-- /.modal-dialog -->
+
+</div><!-- /.modal -->
+
+
+
+
+
+    <!-- Jumbo Page Heading -->
+
+    <div class="jumbotron">
+
+        <div class="container">
+
+            <h1> Survey Questions </h1>
+
+            <hr>
+
+            <h4></h4>
+
+            <br>
+
+            <div class="text-center">
+
+                <!-- This will link to the survey page -->
+
+                <a href="/">
+
+                    <button type="button" class="btn btn-lg btn-primary btn-purple">
+
+                        <i class="fa fa-home"></i>
+
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <!-- Will house the survey question -->
+
+    <section class="container-fluid" id="main" style="height: 500px;">
+
+        <h2>About You</h2>
+
+        <form>
+
+            <div class="form-group">
+
+                <!-- Need to make this field required -->
+
+                <label for="userName">Name(Required)</label>
+
+                <input type="text" class="form-control" id="userName" placeholder="Your Full Name">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="photoID">Link to your Photo (Required)</label>
+
+                <input type="text" class="form-control" id="photoID" placeholder="link to your photo">
+
+            </div>
+
+            <hr>
+
+            <!-- QUESTIONS -->
+
+            <!-- Implementing handlebars -->
+
+            {{{body}}}
+
+            <div>
+
+                <h2>Question 1</h2>
+
+                <h4>How likely are you to live by the ocean?</h4>
+
+                <select class="form-control questions">
+
+                    <option value="1">1 (Strongly Agree)</option>
+
+                    <option value="2">2</option>
+
+                    <option value="3">3</option>
+
+                    <option value="4">4</option>
+
+                    <option value="5">5 (Strongly Disagree)</option>
+
+                </select>
+
+            </div>
+
+            <div>
+
+                <h2>Question 2</h2>
+
+                <h4>Do You Like Dogs?</h4>
+
+                <select class="form-control questions">
+
+                    <option value="1">1 (Strongly Agree)</option>
+
+                    <option value="2">2</option>
+
+                    <option value="3">3</option>
+
+                    <option value="4">4</option>
+
+                    <option value="5">5 (Strongly Disagree)</option>
+
+                </select>
+
+            </div>
+
+            <div>
+
+                <h2>Question 3</h2>
+
+                <h4>Do You Like Dogs?</h4>
+
+                <select class="form-control questions">
+
+                    <option value="1">1 (Strongly Agree)</option>
+
+                    <option value="2">2</option>
+
+                    <option value="3">3</option>
+
+                    <option value="4">4</option>
+
+                    <option value="5">5 (Strongly Disagree)</option>
+
+                </select>
+
+            </div>
+
+        </form>
+
+        <br>
+
+        <div class="text-left">
+
+            <button type="submit" class="btn btn-primary btn-purple" id="addBtn">
+
+                </span> Submit</button>
+
+        </div>
+
+        <br>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+
+                <a href="/api/friends"> API Friends List </a> |
+
+                <a href="https://github.com/Nfinley/FriendFinder_Node_Express_App"> GitHub Repo </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+   
+    <!-- .container-fluid -->
+
+    <!-- jQuery library (necessary for Bootstrap & other JavaScript plugins) -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js "></script>
+
+    <!-- Latest compiled and minified Bootstrap JavaScript -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
+
+   
+    </script> -->
+
+    <script type="text/javascript ">
+
+
+
+    // $('#personModal').modal('show');   
+
+    $('#addBtn').on('click', function() {
+
+        // initializes an intial array to store the selected scores
+
+        var answersArray = [];
+
+        var scoreSum = 0;
+
+        // create a jquery .each function to create an array of the scres
+
+        $('.questions').each(function(index, value) {
+
+            var selection = $(this).val();
+
+            scoreSum = scoreSum + parseInt(selection);
+
+
+
+            // pushing each selection to the array
+
+            answersArray.push(selection);
+
+        });
+
+        // return scoreSum;
+
+        console.log("Here is the the total score of the user input: " , scoreSum);
+
+
+
+        // console.log("answersArray", answersArray);
+
+        var newUser = {
+
+            name: $('#userName').val().trim(),
+
+            photo: $('#photoID').val().trim(),
+
+            scores: answersArray,
+
+            scoreSum: scoreSum
+
+
+
+        };
+
+        // console.log("Newuser: ", newUser);
+
+        var currentURL = window.location.origin;
+
+
+
+        // This takes the html input and sends it to the app.post route
+
+        $.post(currentURL + '/survey', newUser)
+
+            .done(function(data) {
+
+                $('input').val(" ");
+
+                $('select').val(" ");
+
+                // alert("TEST ");
+
+                console.log("data: " + JSON.stringify(data.photo));
+
+                // alert("Thanks for taking the survey")
+
+                var image  = $('<img src="'+ data.photo + '" width="90%" height="auto" alt="match-person">');
+
+                $('#insertPhoto').append(image);
+
+                $('#matchName').append(data.name);
+
+                // $('#insertPhoto').backstretch(data.photo);
+
+                $('#personModal').modal('show'); 
+
+
+
+            });
+
+
+
+        return false;
+
+    });
+
+    </script>
+
+</body>
+
+
+
+</html>
